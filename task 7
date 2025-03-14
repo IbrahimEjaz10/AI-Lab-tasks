@@ -1,0 +1,47 @@
+def bfs(graph, visited, nodes):
+    if not nodes:
+        return
+    
+    next_nodes = []
+    for node in nodes:
+        if node not in visited:
+            print(node, end=' ')
+            visited.append(node)
+            next_nodes.extend(graph[node])
+    bfs(graph, visited, next_nodes)
+        
+graph = {
+    '1' : ['2','3'],
+    '2' : ['4'],
+    '3' : ['4','7'],
+    '4' : ['5','6'],
+    '5' : [],
+    '6' : [],
+    '7' : []
+}
+
+bfs(graph,list(), '1')
+1 2 3 4 7 5 6 
+def bfs(graph, start):
+    queue = [start]
+    visited = []
+
+    while queue:
+        node = queue.pop(0)
+        if node not in visited:
+            visited.append(node)
+            queue.extend(graph[node])
+            print(node, end=' ')
+
+graph = {
+    '1' : ['2','3'],
+    '2' : ['4'],
+    '3' : ['4','7'],
+    '4' : ['5','6'],
+    '5' : [],
+    '6' : [],
+    '7' : []
+}
+
+bfs(graph, '1')
+1 2 3 4 7 5 6 
