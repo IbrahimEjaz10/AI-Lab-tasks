@@ -1,0 +1,46 @@
+def validity(input):
+    input = input[::-1]
+
+    input = [int(x) for x in input]
+
+    for i in range(1, len(input), 2):
+        input[i] *= 2 
+
+        if input[i] > 9:
+            input[i] -= 9
+    total = sum(input)
+
+    if total % 10 == 0:
+        print('Card is VALID')
+    else:
+        print('Card is INVALID')       
+
+validity('5893804115457289')
+def remove_punctuation(text):
+    punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    result = ''
+
+    for char in text:
+        if char not in punctuations:
+            result += char
+
+    return result
+
+text = "Hello, world! How's it going?"
+clean = remove_punctuation(text)
+print(f'original: {text}')
+print(f'w/o punctuations: {clean}')
+original: Hello, world! How's it going?
+w/o punctuations: Hello world Hows it going
+def sort_sentence(sentence):
+    words = sentence.split(' ')
+    words.sort()
+    sorted = ''.join(words)
+    return sorted 
+
+sentence = "can apple bear "
+sorted_result = sort_sentence(sentence)
+print("Original Sentence:", sentence)
+print("Sorted Sentence:", sorted_result)
+Original Sentence: can apple bear 
+Sorted Sentence: applebearcan
