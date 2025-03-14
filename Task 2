@@ -1,0 +1,34 @@
+import random 
+
+print("Welcome to the FizzBuzz challenge!")
+
+attempts = 1
+prev = 0 
+
+while attempts <= 5:
+
+    random_n = random.randint(0, 50)
+    temp = prev  
+    prev = random_n  
+
+    print(f"Generated number: {random_n}")
+
+    player_guess = input("What do you think? Is it 'fizz', 'buzz', or 'fizzbuzz'? ").strip().lower()
+
+    total = temp + prev  
+
+    if player_guess == "fizzbuzz" and total % 3 == 0 and total % 5 == 0:
+        print("kamaal shabeeray ")
+
+    elif player_guess == "fizz" and total % 3 == 0:
+        print("ae e jutttttt brand")
+
+    elif player_guess == "buzz" and total % 5 == 0:
+        print("well done ustad")
+
+    else:
+        print("reh gaye ho na fer")
+
+    attempts += 1  
+
+print("shukriya")
